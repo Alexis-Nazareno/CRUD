@@ -1,0 +1,35 @@
+### Required
+app_name: prupay-db-manager
+
+state: deployment
+
+replicas: 1
+
+image: docker-pluk-pruone.pruregistry.intranet.asia:8443/prupay-db-manager
+
+image tag: 0.0.1
+
+# Optional
+# image_pull_secrets
+container_resources:
+  cpu: 512m 
+  ram: 1Gi
+
+#vars_files:
+
+#secrets_files:
+
+environment: 
+  MANAGEMENT_PORT: "10013"
+  SERVER_PORT: "15002"
+  COM_MSSQL_DBUSER: "dmsuser"
+  COM_MSSQL_DBPASS: "dmsuser"
+  COM_MSSQL_DBSERVER: "VPHLIFEUDBS001"
+  COM_MSSQL_DBDATABASE: "Pruaccess"
+
+service ports: 
+  - name: prupay-db-manager
+  - port: 15002
+  - protocol: tcp
+  - service_name: prupay-db-manager
+  - exposed_ingress: false

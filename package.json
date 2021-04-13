@@ -1,0 +1,19 @@
+{
+  "name": "pruaccess-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Proygbv Suva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fastify": "^3.8.0",
+    "morgan": "^1.10.0",
+    "mssql": "^6.2.3",
+    "mybatis-mapper": "^0.6.5"
+  }
+}
